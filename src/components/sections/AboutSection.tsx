@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { Reveal } from "../common/Reveal";
 import { SectionLabel } from "../common/SectionLabel";
 

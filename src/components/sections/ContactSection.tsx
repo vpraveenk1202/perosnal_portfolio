@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle, Github, Linkedin, Mail, Send } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import type { FormEvent } from "react";
 import { Reveal } from "../common/Reveal";
 import { SectionLabel } from "../common/SectionLabel";
 import type { ContactFormData } from "../../types/portfolio";
