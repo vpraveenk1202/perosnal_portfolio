@@ -67,6 +67,22 @@ npm run build
 npm run preview
 ```
 
+## Contact form email setup
+
+The contact form uses [EmailJS](https://www.emailjs.com/) and works on Vercel without a backend.
+
+1. Create an EmailJS account and connect the inbox `vpraveenk1202@gmail.com`.
+2. Create an email template whose fields use `{{from_name}}`, `{{from_email}}`, `{{phone}}`, `{{subject}}`, and `{{message}}`.
+3. Add these variables in Vercel under **Project Settings > Environment Variables**:
+
+```text
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+Redeploy after adding the variables. For local testing, put the same values in `.env.local`.
+
 ## Where to edit your personal details
 
 ### 1. Main portfolio content

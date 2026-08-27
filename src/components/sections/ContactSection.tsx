@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { CheckCircle, Github, Linkedin, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import type { FormEvent } from "react";
@@ -19,6 +20,7 @@ export function ContactSection() {
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validate = (): boolean => {
     const nextErrors: Partial<ContactFormData> = {};
@@ -50,18 +52,37 @@ export function ContactSection() {
     }
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!validate()) return;
 
     setSending(true);
+    setSubmitError("");
 
-    window.setTimeout(() => {
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Email service is not configured yet.");
+      }
+
+      await emailjs.send(serviceId, templateId, {
+        from_name: form.name,
+        from_email: form.email,
+        phone: form.phone || "Not provided",
+        subject: form.subject,
+        message: form.message
+      }, publicKey);
+
       setSending(false);
       setSubmitted(true);
-      console.log("Contact form submitted:", form);
-    }, 900);
+    } catch (error) {
+      setSending(false);
+      setSubmitError(error instanceof Error ? error.message : "Unable to send your message. Please email me directly.");
+    }
   };
 
   const inputClass = (field: keyof ContactFormData) =>
@@ -181,12 +202,13 @@ export function ContactSection() {
                         </>
                       )}
                     </button>
+                    {submitError && <p className="text-sm font-medium text-red-500">{submitError}</p>}
                   </motion.form>
                 )}
               </AnimatePresence>
 
               <div className="mt-10 flex flex-wrap gap-3">
-                <a href="mailto:your-email@example.com" className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-black">
+                <a href="mailto:vpraveenk1202@gmail.com" className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-black">
                   <Mail size={16} /> Email me
                 </a>
                 <a href="https://github.com/Prmersal" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-black">

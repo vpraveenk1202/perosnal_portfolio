@@ -31,15 +31,15 @@ export function HeroSection() {
           <Reveal delay={0.24}>
   <div className="mt-9 flex flex-wrap gap-3">
     <a
-      href="./public/assets/praveenresumes.pdf"
+      href="/assets/praveenresumes.pdf"
       download="Praveenkumarv_resume.pdf"
-      className="group flex items-center gap-3 rounded-full bg-[#4b392f] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-1"
+      className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#4b392f] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-1 hover:shadow-[5px_5px_0_#111]"
     >
-      Download Resume
-      <Download
-        size={16}
-        className="transition group-hover:translate-y-1"
-      />
+      <span className="relative z-10">Download Resume</span>
+      <span className="relative z-10 flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white/15">
+        <Download size={15} className="transition-transform duration-300 group-hover:translate-y-8" />
+        <Download size={15} className="absolute -translate-y-8 transition-transform duration-300 group-hover:translate-y-0" />
+      </span>
     </a>
   </div>
 </Reveal>
