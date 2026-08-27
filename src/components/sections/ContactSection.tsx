@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { CheckCircle, Github, Linkedin, Mail, Send } from "lucide-react";
+import { CheckCircle, ChevronDown, Github, Linkedin, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Reveal } from "../common/Reveal";
@@ -161,17 +161,20 @@ export function ContactSection() {
                         <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+91 1234567890" className={inputClass("phone")} />
                       </FormField>
                       <FormField label="Subject" required error={errors.subject}>
-                        <select name="subject" value={form.subject} onChange={handleChange} className={inputClass("subject")}>
-                          <option value="">Select a subject</option>
-                          <option>Website Development</option>
-                          <option>Web Application</option>
-                          <option>UI/UX Design</option>
-                          <option>Automation Workflow</option>
-                          <option>Digital Marketing / SEO</option>
-                          <option>Video Editing</option>
-                          <option>General Inquiry</option>
-                          <option>Other</option>
-                        </select>
+                        <div className="relative">
+                          <select name="subject" value={form.subject} onChange={handleChange} className={`${inputClass("subject")} appearance-none pr-12`}>
+                            <option value="">Select a subject</option>
+                            <option>Website Development</option>
+                            <option>Web Application</option>
+                            <option>UI/UX Design</option>
+                            <option>Automation Workflow</option>
+                            <option>Digital Marketing / SEO</option>
+                            <option>Video Editing</option>
+                            <option>General Inquiry</option>
+                            <option>Other</option>
+                          </select>
+                          <ChevronDown aria-hidden="true" size={18} className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-black/70" />
+                        </div>
                       </FormField>
                     </div>
 
@@ -198,7 +201,11 @@ export function ContactSection() {
                         </>
                       ) : (
                         <>
-                          Send Message <Send size={16} className="transition group-hover:translate-x-1" />
+                          Send Message
+                          <span className="relative flex h-5 w-5 items-center justify-center overflow-hidden" aria-hidden="true">
+                            <Send size={17} className="absolute transition-all duration-500 ease-out group-hover:translate-x-8 group-hover:-translate-y-8 group-hover:rotate-12 group-hover:opacity-0" />
+                            <Send size={17} className="absolute -translate-x-8 translate-y-8 rotate-12 opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-0 group-hover:opacity-100" />
+                          </span>
                         </>
                       )}
                     </button>
