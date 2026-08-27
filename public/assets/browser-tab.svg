@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 653 653">
+  <defs>
+    <clipPath id="circle">
+      <circle cx="326.5" cy="326.5" r="326.5" />
+    </clipPath>
+  </defs>
+  <image href="browser_tab_img.png" width="653" height="653" preserveAspectRatio="xMidYMid slice" clip-path="url(#circle)" />
+</svg>
