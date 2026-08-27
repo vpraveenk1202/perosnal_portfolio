@@ -6,6 +6,8 @@ export interface Project {
   description: string;
   stack: string;
   color: string;
+  image?: string;
+  githubUrl?: string;
 }
 
 export interface Service {

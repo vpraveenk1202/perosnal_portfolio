@@ -38,17 +38,23 @@ export function ProjectsSection() {
               </div>
 
               <div className="relative z-10 mt-10 flex flex-1 items-center">
-                <div className="w-full rotate-[-4deg] rounded-2xl border-[3px] border-black bg-white p-4 shadow-[8px_8px_0_rgba(0,0,0,.18)] transition group-hover:rotate-0">
-                  <div className="flex gap-2">
-                    <span className="h-2 w-2 rounded-full bg-black/20" />
-                    <span className="h-2 w-2 rounded-full bg-black/20" />
-                    <span className="h-2 w-2 rounded-full bg-black/20" />
-                  </div>
-                  <div className="mt-6 h-24 rounded-xl bg-black/5 p-4">
-                    <div className="h-3 w-2/3 rounded bg-black/15" />
-                    <div className="mt-3 h-2 w-full rounded bg-black/10" />
-                    <div className="mt-2 h-2 w-4/5 rounded bg-black/10" />
-                  </div>
+                <div className="w-full rotate-[-4deg] overflow-hidden rounded-2xl border-[3px] border-black bg-white shadow-[8px_8px_0_rgba(0,0,0,.18)] transition group-hover:rotate-0">
+                  {project.image ? (
+                    <img src={project.image} alt={`${project.title} preview`} className="h-48 w-full object-cover" />
+                  ) : (
+                    <div className="p-4">
+                      <div className="flex gap-2">
+                        <span className="h-2 w-2 rounded-full bg-black/20" />
+                        <span className="h-2 w-2 rounded-full bg-black/20" />
+                        <span className="h-2 w-2 rounded-full bg-black/20" />
+                      </div>
+                      <div className="mt-6 h-24 rounded-xl bg-black/5 p-4">
+                        <div className="h-3 w-2/3 rounded bg-black/15" />
+                        <div className="mt-3 h-2 w-full rounded bg-black/10" />
+                        <div className="mt-2 h-2 w-4/5 rounded bg-black/10" />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -60,6 +66,11 @@ export function ProjectsSection() {
                 <h3 className="display-font text-xl font-bold leading-tight">{project.title}</h3>
                 <p className="mt-2 text-xs leading-5 text-black/65">{project.description}</p>
                 <p className="mono-font mt-3 text-[9px] uppercase tracking-[.08em] text-black/55">{project.stack}</p>
+                {project.githubUrl && (
+                  <a href={project.githubUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs font-bold underline decoration-2 underline-offset-4 transition hover:text-accent">
+                    View on GitHub <ArrowUpRight size={14} />
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}
