@@ -218,10 +218,10 @@ export function ContactSection() {
                 <a href="mailto:vpraveenk1202@gmail.com" className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-black">
                   <Mail size={16} /> Email me
                 </a>
-                <a href="https://github.com/Prmersal" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-black">
+                <a href="https://github.com/vpraveenk1202/" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-black">
                   <Github size={16} /> GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/praveen-kumar-v" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-black">
+                <a href="https://www.linkedin.com/in/praveen-kumar-fullstackdeveloper" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-black">
                   <Linkedin size={16} /> LinkedIn
                 </a>
               </div>
@@ -245,7 +245,7 @@ export function ContactSection() {
                 <div className="pt-2">
                   <h3 className="display-font text-2xl font-bold leading-none">Praveen<br />Kumar V</h3>
                   <p className="mono-font mt-3 text-[9px] uppercase tracking-[.13em] text-black/45">Full Stack Developer</p>
-                  <p className="mt-4 text-xs font-medium text-black/55">Freelancer • Web • Automation • Growth</p>
+                  <p className="mt-4 text-xs font-medium text-black/55">Freelancer • Web Developer • Automation </p>
                 </div>
               </div>
 

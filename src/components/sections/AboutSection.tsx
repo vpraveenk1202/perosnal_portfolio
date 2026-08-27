@@ -44,7 +44,7 @@ export function AboutSection() {
                     <h3 className="display-font text-xl font-bold">PRAVEEN KUMAR V</h3>
                     <p className="mono-font mt-1 text-[9px] uppercase tracking-[.16em] text-black/50">Full Stack Developer</p>
                   </div>
-                  <span className="text-2xl font-black text-accent">PKV</span>
+                  <span className="text-2xl font-black text-accent">PK</span>
                 </div>
 
                 {/* <div className="mt-4 overflow-hidden rounded-xl border border-black/10">

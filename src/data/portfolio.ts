@@ -11,8 +11,10 @@ export const services: Service[] = [
   {
     number: "01",
     title: "Website Development",
+
     description: "Responsive business websites and full-stack web applications built for real-world use.",
-    icon: Code2
+    icon: Code2,
+   
   },
   {
     number: "02",
@@ -40,14 +42,17 @@ export const projects: Project[] = [
     title: "Rental Home Management Portal",
     description: "Full-stack rental property management system with an admin dashboard, security and notifications.",
     stack: "React.js • Node.js • Express.js • MySQL",
-    color: "#5b78d1"
+    color: "#5b78d1",
+    image: "/assets/rental-home.png"
+
   },
   {
     number: "02",
     title: "Real Estate Lead Automation",
     description: "Lead extraction and reporting workflow using OCR, Telegram, n8n and Google Sheets.",
     stack: "n8n • OCR • Telegram • Google Sheets",
-    color: "#d8d1bd"
+    color: "#d8d1bd",
+    image: "/assets/automate.png"
   },
   {
     number: "03",
