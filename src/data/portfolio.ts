@@ -43,7 +43,7 @@ export const projects: Project[] = [
     description: "Full-stack rental property management system with an admin dashboard, security and notifications.",
     stack: "React.js • Node.js • Express.js • MySQL",
     color: "#5b78d1",
-    image: "/assets/rental-home.png"
+    image: "/assets/rental-portal.webp"
 
   },
   {
@@ -52,14 +52,17 @@ export const projects: Project[] = [
     description: "Lead extraction and reporting workflow using OCR, Telegram, n8n and Google Sheets.",
     stack: "n8n • OCR • Telegram • Google Sheets",
     color: "#d8d1bd",
-    image: "/assets/automate.png"
+    image: "/assets/automate-optimized.jpg"
   },
   {
     number: "03",
-    title: "College Bus Tracking App",
-    description: "Mobile-first tracking concept focused on a clean experience for students and administrators.",
-    stack: "React Native • APIs • Mobile UI",
-    color: "#b5c989"
+    title: "interior Design Website",
+    description: "Designed and developed a modern, responsive interior design website using React.js, TypeScript, and Tailwind CSS.",
+    stack: "React js •Typescript",
+    color: "#b5c989",
+    image: "/assets/interior_Design_FrontPage.webp"
   },
+  
+ 
   
 ];

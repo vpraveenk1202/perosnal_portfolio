@@ -240,7 +240,7 @@ export function ContactSection() {
 
               <div className="mt-5 flex gap-5">
                 <div className="h-36 w-28 shrink-0 overflow-hidden rounded-xl border-2 border-black bg-[#e8e2d7]">
-                  <img src="/assets/portrait-cutout.png" alt="Praveen Kumar V" className="h-full w-full object-cover object-top" />
+                  <img src="/assets/portrait-cutout-optimized.png" alt="Praveen Kumar V" loading="lazy" decoding="async" className="h-full w-full object-cover object-top" />
                 </div>
                 <div className="pt-2">
                   <h3 className="display-font text-2xl font-bold leading-none">Praveen<br />Kumar V</h3>

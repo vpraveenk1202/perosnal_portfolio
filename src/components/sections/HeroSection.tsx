@@ -17,7 +17,7 @@ export function HeroSection() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="condensed-font mt-2 min-h-[.86em] text-[24vw] leading-[.82] text-black sm:text-[18vw] lg:text-[10rem]">
+            <h1 className="condensed-font mt-2 min-h-[.86em] max-w-full text-[16vw] leading-[.86] text-black sm:text-[18vw] md:text-[5rem] lg:text-[5rem] xl:text-[8rem]">
               <Typewriter words={roles} />
             </h1>
           </Reveal>
@@ -57,8 +57,9 @@ export function HeroSection() {
             className="relative overflow-hidden rounded-[2rem] border-[8px] border-black bg-black shadow-[0_18px_0_rgba(17,17,17,.12)]"
           >
             <img
-              src="/assets/hero-scene.png"
+              src="/assets/hero-scene.webp"
               alt="Praveen Kumar V"
+              loading="eager"
               className="h-auto w-full object-cover"
             />
           </motion.div>

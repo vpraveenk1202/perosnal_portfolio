@@ -20,7 +20,7 @@ export function ProjectsSection() {
           </div>
         </Reveal>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-6xl gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-x-14 lg:gap-y-14">
           {projects.map((project, index) => (
             <motion.article
               key={project.number}
@@ -30,7 +30,7 @@ export function ProjectsSection() {
               transition={{ duration: 0.55, delay: index * 0.06 }}
               whileHover={{ y: -10 }}
               style={{ backgroundColor: project.color }}
-              className="group relative flex min-h-[470px] flex-col overflow-hidden rounded-[1.7rem] p-5"
+              className="group relative flex min-h-[470px] flex-col overflow-hidden rounded-[1rem] p-5"
             >
               <div className="relative z-10 flex items-center justify-between">
                 <span className="rounded-full bg-white/85 px-3 py-1 text-[10px] font-black">PROJECT</span>
@@ -40,7 +40,7 @@ export function ProjectsSection() {
               <div className="relative z-10 mt-10 flex flex-1 items-center">
                 <div className="w-full rotate-[-4deg] overflow-hidden rounded-2xl border-[3px] border-black bg-white shadow-[8px_8px_0_rgba(0,0,0,.18)] transition group-hover:rotate-0">
                   {project.image ? (
-                    <img src={project.image} alt={`${project.title} preview`} className="h-48 w-full object-cover" />
+                    <img src={project.image} alt={`${project.title} preview`} loading="lazy" decoding="async" className="h-48 w-full object-cover" />
                   ) : (
                     <div className="p-4">
                       <div className="flex gap-2">

@@ -25,4 +25,4 @@ export interface ContactFormData {
   message: string;
 }
 
-export type SectionId = "home" | "about" | "services" | "projects" | "contact";
+export type SectionId = "home" | "about" | "experience" | "services" | "projects" | "contact";

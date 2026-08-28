@@ -1,10 +1,13 @@
+import { lazy, Suspense } from "react";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { HeroSection } from "./components/sections/HeroSection";
-import { AboutSection } from "./components/sections/AboutSection";
-import { ServicesSection } from "./components/sections/ServicesSection";
-import { ProjectsSection } from "./components/sections/ProjectsSection";
-import { ContactSection } from "./components/sections/ContactSection";
+
+const AboutSection = lazy(() => import("./components/sections/AboutSection").then(({ AboutSection }) => ({ default: AboutSection })));
+const ExperienceSection = lazy(() => import("./components/sections/ExperienceSection").then(({ ExperienceSection }) => ({ default: ExperienceSection })));
+const ServicesSection = lazy(() => import("./components/sections/ServicesSection").then(({ ServicesSection }) => ({ default: ServicesSection })));
+const ProjectsSection = lazy(() => import("./components/sections/ProjectsSection").then(({ ProjectsSection }) => ({ default: ProjectsSection })));
+const ContactSection = lazy(() => import("./components/sections/ContactSection").then(({ ContactSection }) => ({ default: ContactSection })));
 
 export default function App() {
   return (
@@ -13,10 +16,13 @@ export default function App() {
 
       <main>
         <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <ProjectsSection />
-        <ContactSection />
+        <Suspense fallback={null}>
+          <AboutSection />
+          <ExperienceSection />
+          <ServicesSection />
+          <ProjectsSection />
+          <ContactSection />
+        </Suspense>
       </main>
 
       <Footer />

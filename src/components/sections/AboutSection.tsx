@@ -14,7 +14,7 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-14 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
           <Reveal>
-            <div className="relative mx-auto max-w-sm">
+            <div className="relative mx-auto max-w-sm -translate-x-[5px] sm:translate-x-0">
               <motion.div
                 whileHover={{ rotate: 0, y: -8 }}
                 className="relative rotate-[-3deg] rounded-[2rem] border-2 border-black bg-white p-4 shadow-[18px_18px_0_#111]"
@@ -23,6 +23,8 @@ export function AboutSection() {
                   src="/assets/paperclips.png"
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
                   className="absolute -right-7 -top-10 z-10 h-24 w-24"
                 />
 
@@ -33,8 +35,10 @@ export function AboutSection() {
 
                 <div className="overflow-hidden rounded-2xl bg-[#e8e2d7]">
                   <img
-                    src="/assets/portrait-cutout.png"
+                    src="/assets/portrait-cutout-optimized.png"
                     alt="Praveen Kumar V"
+                    loading="lazy"
+                    decoding="async"
                     className="h-[330px] w-full object-cover object-top"
                   />
                 </div>
